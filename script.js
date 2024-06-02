@@ -1,14 +1,14 @@
-// Swal.fire({
-//   html: `<div class="welcome">Welcome To The Shop</div>`,
-//   allowOutsideClick: false,
-//   showConfirmButton: false,
-//   timer: 3500,
-//   backdrop:'white',
-//   width:'100%',
-//   willOpen: () => {
-//     Swal.showLoading();
-//   },
-// });
+Swal.fire({
+  html: `<div class="welcome">Welcome To<br>Cheikh Family Farm<br><h2 style="color:green">STORE</h2></div>`,
+  allowOutsideClick: false,
+  showConfirmButton: false,
+  timer: 3500,
+  backdrop:'white',
+  width:'100%',
+  willOpen: () => {
+    Swal.showLoading();
+  },
+});
 
 const products = [
   {
