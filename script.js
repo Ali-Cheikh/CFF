@@ -1,5 +1,5 @@
 Swal.fire({
-  html: `<div class="welcome">Welcome To<br>Cheikh Family Farm<br><h2 style="color:green">STORE</h2></div>`,
+  html: `<div class="welcome"><div style="font-family:cursive">Welcome To<br>Cheikh Family Farm</div><br><h2 style="color:green;font-size:150%">STORE</h2></div>`,
   allowOutsideClick: false,
   showConfirmButton: false,
   timer: 3500,
