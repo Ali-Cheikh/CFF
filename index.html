@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <link rel="shortcut icon" href="/img/logo.jpg" type="image/x-icon">
+    <title>C F F | Cheikh Family Farm</title>
+    <meta name="title" content="C F F | Cheikh Family Farm" />
+    <meta name="description" content="C F F | Cheikh Family Farm description" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ali-cheikh.github.io/" />
+    <meta property="og:title" content="C F F | Cheikh Family Farm" />
+    <meta property="og:description" content="C F F | Cheikh Family Farm description" />
+    <meta property="og:image" content="/img/logo.jpg" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="/img/store-logo.png" />
+    <meta property="twitter:url" content="https:// EEEStorev2.netlify.app/" />
+    <meta property="twitter:title" content="C F F | Cheikh Family Farm" />
+    <meta property="twitter:description" content="C F F | Cheikh Family Farm description" />
+    <meta property="twitter:image" content="/img/store-logo.png" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <center>
+            <button style="right:6%;top: 4%;z-index: +9999;position: fixed;display: none;" class="navbar-text btn btn-warning mt-2" onclick="openCart()" id="mybutton"><i class="fa fa-cart-plus"></i></button>
+            <h2 style="float:left" class="navbar-text"> Welcome to my store </h2>
+            <br>
+        </center>
+    </div>
+    <div class="container mt-5">
+        <img src="img/image.jpg" width="100%" alt="">
+        <div class="container">
+            <hr><br>
+            <center>
+                <div id="category-filter">
+                    <label><input type="checkbox" value="Good" onchange="filterByCategory()"> Good</label>
+                    <label><input type="checkbox" value="bad" onchange="filterByCategory()"> Bad</label>
+                    <label><input type="checkbox" value="expensive" onchange="filterByCategory()"> Expensive</label>
+                    <label><input type="checkbox" value="cheap" onchange="filterByCategory()"> Cheap</label>
+                </div>
+            </center><br>
+            <input class="form-control mr-sm-2" type="search" id="myInput" onkeyup="SearchFunction()" placeholder="Search For Products" title="Type in a name"><br>
+            <div id="product-list" class="row mt-6"></div>
+            <br>
+        </div>
+        <hr>
+    </div>
+        <div class="container mt-5">
+            <div style="display: flex; align-items: center;">
+                <div style="flex: 1; padding-right: 20px;">
+                    <img src="img/logo.png" class="foot-logo" alt="Logo">
+                </div>
+                <div class="foot" style="flex: 1;">
+                    <h3>※Connecting you to your Customers</h3><br>
+                    <h3>※Setting an Organized DataSheet </h3><br>
+                    <h3>※24/7 Live Support</h3><br>
+                    <h3>※Weekly Maintenance</h3><br>
+                </div>
+            </div>
+        </div><br>
+        <footer class="footer bg-warning">
+            <div class=" fixed-bottom">
+                <center><span class="text-muted">© 2024 Ali Cheikh. All rights reserved.</span></center>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>
