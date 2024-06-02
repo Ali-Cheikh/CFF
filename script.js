@@ -451,10 +451,10 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
         imageUrl: "/img/sc.png",
         imageAlt: "Custom Success Icon",
         showConfirmButton: false,
-        timer: 2000,
+        timer: 2500,
         icon: null,
         background: "black",
-        color: "white",
+        textColor: "white",
       });
     } else {
       console.error("Error sending product:", productName);
