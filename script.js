@@ -13,14 +13,14 @@ Swal.fire({
 const products = [
   {
     name: "0.25 ltr Bottle",
-    price: 6.25,
+    price: 6.5,
     image: "/product/25.png",
     intro: "Extra Virgin Olive Oil 0.25ltr Bottle 0.3 Acidity",
     category: "olive"
   },
   {
     name: "0.5 ltr Bottle",
-    price: 12.5,
+    price: 12.75,
     image: "/product/5.png",
     intro: "Extra Virgin Olive Oil 0.5ltr Bottle 0.3 Acidity",
     category: "olive"
