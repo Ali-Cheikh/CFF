@@ -415,7 +415,6 @@ function checkout() {
     });
   });
 }
-
 // Function to send a product along with user data to Google Sheets
 function sendProductToGoogleSheets(productName, price, count, userData) {
   Swal.fire({
@@ -430,8 +429,7 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
     },
   });
 
-  const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbwgGhYluZtg_c5KVcgmVqv8XeJ5cGYOqAiXoDgAaK0LCicFveU6LkwVCluixUgERlx7/exec";
+  const scriptUrl ="https://script.google.com/macros/s/AKfycbyIYfTnwoef9__EBqoHb1dLrnnCDStbrtocPpkP9-76sHxxQ9xOeLLa1oyT1EoBMLh0/exec";
 
   const formData = new FormData();
   formData.append("productName", productName);
