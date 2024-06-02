@@ -12,38 +12,45 @@
 
 const products = [
   {
-    name: "1.5 ltr Bottle",
-    price: 20,
-    image: "/product/1.5.avif",
-    intro: "Extra Virgin Olive Oil 1.5ltr Bottle 0.3 Acidity",
-    category: "olive"
-  },
-  {
-    name: "2 ltr Bottle",
-    price: 20,
-    image: "/product/2.avif",
-    intro: "Extra Virgin Olive Oil 2ltr Bottle 0.3 Acidity",
-    category: "olive"
-  },
-  {
-    name: "5 ltr Bottle",
-    price: 20,
-    image: "/product/5.avif",
-    intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
-    category: "olive"
-  },
-  {
     name: "0.25 ltr Bottle",
-    price: 20,
+    price: 6.25,
     image: "/product/25.png",
     intro: "Extra Virgin Olive Oil 0.25ltr Bottle 0.3 Acidity",
     category: "olive"
   },
   {
     name: "0.5 ltr Bottle",
-    price: 20,
+    price: 12.5,
     image: "/product/5.png",
     intro: "Extra Virgin Olive Oil 0.5ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "1 ltr Bottle",
+    price: 25,
+    image: "/product/1.avif",
+    intro: "Extra Virgin Olive Oil 1ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "2 ltr Bottle",
+    price: 50,
+    image: "/product/2.avif",
+    intro: "Extra Virgin Olive Oil 2ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "5 ltr Bottle",
+    price: 125,
+    image: "/product/5.avif",
+    intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "10 ltr Bottle",
+    price: 250,
+    image: "/product/5.avif",
+    intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
     category: "olive"
   },
 ];
