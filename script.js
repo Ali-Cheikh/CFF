@@ -209,8 +209,8 @@ function addToCart(productName, price, quantity) {
   console.log("Shopping Cart:", shoppingCart);
 
   // Change the cart button icon
-  cartButton.classList.remove("fa-cart-plus");
-  cartButton.classList.add("fa-bell");
+  cartButton.classList.remove("fa-shopping-cart");
+  cartButton.classList.add("fa-cart-plus");
 
   Swal.fire({
     icon: "success",
@@ -226,14 +226,14 @@ function openCart() {
   if (shoppingCart.length === 0) {
     cartContent += "<p>Your cart is empty.</p>";
     // Change the cart button icon back to the regular icon
-    cartButton.classList.remove("fa-bell");
-    cartButton.classList.add("fa-cart-plus");
+    cartButton.classList.remove("fa-cart-plus");
+    cartButton.classList.add("fa-shopping-cart");
   } else {
     shoppingCart.forEach((item) => {
       cartContent += `
                 <div>
-                    <p>
-                    <button class="btn btn-danger" onclick="removeFromCart('${item.productName}')"><i class="fa fa-close"></i></button>
+                    <p style="display:inline-block">
+                    <button class="btn btn-danger" onclick="removeFromCart('${item.productName}')"><i class="fa-close"></i></button>
                     <big><u>${item.productName}</u> :</big> ${item.price} <small><b>دت</b></small> =>
                         <input type="number" min="1" value="${item.count}" onchange="updateCount('${item.productName}', this.value)" style="width:40px" controls="true">
                     </p>
@@ -242,7 +242,7 @@ function openCart() {
     });
     cartContent += `
             <div>
-                <button class="btn btn-primary" onclick="checkout()" width="100%">Buy <i class="fa fa-paper-plane"></i></button>
+                <button class="btn btn-primary" onclick="checkout()" width="100%">Buy <i class="fa-paper-plane"></i></button>
             </div>
         `;
   }
@@ -264,8 +264,8 @@ function removeFromCart(productName) {
   }
   // Check if cart is empty to change the icon back
   if (shoppingCart.length === 0) {
-    cartButton.classList.remove("fa-bell");
-    cartButton.classList.add("fa-cart-plus");
+    cartButton.classList.remove("fa-cart-plus");
+    cartButton.classList.add("fa-shopping-cart");
   }
 }
 
