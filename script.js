@@ -315,48 +315,56 @@ function promptUserData(callback) {
         if (phoneResult.isConfirmed) {
           Swal.fire({
             title: "Select Your City",
-            input: "select",
-            inputOptions: {
-              Tunis: "Tunis",
-              Sfax: "Sfax",
-              Sousse: "Sousse",
-              Kairouan: "Kairouan",
-              Bizerte: "Bizerte",
-              Gabes: "Gabes",
-              Ariana: "Ariana",
-              Gafsa: "Gafsa",
-              Monastir: "Monastir",
-              Manouba: "Manouba",
-              "Ben Arous": "Ben Arous",
-              Kasserine: "Kasserine",
-              Medenine: "Medenine",
-              Mahdia: "Mahdia",
-              Zaghouan: "Zaghouan",
-              Beja: "Beja",
-              Jendouba: "Jendouba",
-              Nabeul: "Nabeul",
-              Kebili: "Kebili",
-              Siliana: "Siliana",
-              Tataouine: "Tataouine",
-              Tozeur: "Tozeur",
-              Kef: "Kef",
-              Kasserine: "Kasserine",
-            },
-            inputPlaceholder: "Select your city",
+            html: `
+            <div style="display: flex; align-items: center;">
+              <div style="flex: 1">
+                <select id="city-select" class="swal2-select">
+                  <option value="Tunis">Tunis</option>
+                  <option value="Sfax">Sfax</option>
+                  <option value="Sousse">Sousse</option>
+                  <option value="Kairouan">Kairouan</option>
+                  <option value="Bizerte">Bizerte</option>
+                  <option value="Gabes">Gabes</option>
+                  <option value="Ariana">Ariana</option>
+                  <option value="Gafsa">Gafsa</option>
+                  <option value="Monastir">Monastir</option>
+                  <option value="Manouba">Manouba</option>
+                  <option value="Ben Arous">Ben Arous</option>
+                  <option value="Kasserine">Kasserine</option>
+                  <option value="Medenine">Medenine</option>
+                  <option value="Mahdia">Mahdia</option>
+                  <option value="Zaghouan">Zaghouan</option>
+                  <option value="Beja">Beja</option>
+                  <option value="Jendouba">Jendouba</option>
+                  <option value="Nabeul">Nabeul</option>
+                  <option value="Kebili">Kebili</option>
+                  <option value="Siliana">Siliana</option>
+                  <option value="Tataouine">Tataouine</option>
+                  <option value="Tozeur">Tozeur</option>
+                  <option value="Kef">Kef</option>
+                </select>
+              </div>
+              <div style="flex: 1;">
+                <input id="location-input" class="swal2-input" placeholder="Enter your location">
+              </div>
+            </div>
+              `,
             confirmButtonText: "Buy 💰",
-            confirmButtonColor: "blue",
             showCancelButton: false,
-            inputValidator: (value) => {
-              if (!value) {
-                return "Please select your city";
+            preConfirm: () => {
+              const selectedCity = document.getElementById("city-select").value;
+              const location = document.getElementById("location-input").value;
+              if (!selectedCity || !location) {
+                Swal.showValidationMessage("Please select a city and enter your location");
               }
+              return { selectedCity, location };
             },
-          }).then((cityResult) => {
-            if (cityResult.isConfirmed) {
+          }).then((result) => {
+            if (result.isConfirmed) {
               const userData = {
                 name: nameResult.value,
                 phone: phoneResult.value,
-                location: cityResult.value,
+                location: `city: ${result.value.selectedCity}.\n Where: ${result.value.location}`,
               };
               callback(userData);
             }
