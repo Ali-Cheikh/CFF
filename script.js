@@ -461,7 +461,7 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
         showConfirmButton: false,
         timer: 2500,
         icon: null,
-        background: "#00f37a91",
+        background: "#ffff33db",
         color: "black",
       });
     } else {
