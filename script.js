@@ -364,7 +364,7 @@ function promptUserData(callback) {
               const userData = {
                 name: nameResult.value,
                 phone: phoneResult.value,
-                location: `city: ${result.value.selectedCity}.\n Where: ${result.value.location}`,
+                location: `City: ${result.value.selectedCity}.\nWhere: ${result.value.location}`,
               };
               callback(userData);
             }
@@ -461,8 +461,8 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
         showConfirmButton: false,
         timer: 2500,
         icon: null,
-        background: "black",
-        textColor: "white",
+        background: "#00f37a91",
+        color: "black",
       });
     } else {
       console.error("Error sending product:", productName);
