@@ -452,7 +452,6 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
   xhr.onload = function () {
     if (xhr.status === 200) {
       console.log("Product sent successfully:", productName);
-      // Show success message
       Swal.fire({
         title: "Demand Reached",
         text: "Your purchase was successful. We'll contact you soon.",
