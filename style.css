@@ -109,7 +109,7 @@ label{
 }
 .card-img-top{
     overflow:hidden;
-    max-height: 400px;
+    max-height: 300px;
 }
 
 a:link{
