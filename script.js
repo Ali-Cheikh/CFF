@@ -2,7 +2,7 @@ Swal.fire({
   html: `<div class="welcome"><div style="font-family:cursive">Welcome To<br>Cheikh Family Farm</div><h2 style="color:green;font-size:100%">STORE</h2></div>`,
   allowOutsideClick: false,
   showConfirmButton: false,
-  timer: 3500,
+  timer: 100,
   backdrop:'white',
   width:'100%',
   willOpen: () => {
