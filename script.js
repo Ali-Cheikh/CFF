@@ -428,7 +428,6 @@ function checkout() {
 function sendProductToGoogleSheets(productName, price, count, userData) {
   Swal.fire({
     title: "Sending...",
-    titleColor: "#fc1111",
     text: "Please wait while your purchase is being processed.",
     icon: "info",
     allowOutsideClick: false,
@@ -438,7 +437,7 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
     },
   });
 
-  const scriptUrl ="https://script.google.com/macros/s/AKfycbyssWM6EX3GMQD-4Cbp7Gs0p3e0WJsG11Pz5-otrA5BTh-Uz4dEia4RSvJqupmDd5Sa/exec";
+  const scriptUrl ="https://script.google.com/macros/s/AKfycbyvtS4FYmUAcVcdloLPU99iI-4xN7N-TrHG29I7ze7VX73NheN6zudpXTXX9EMhJ-kG/exec";
 
   const formData = new FormData();
   formData.append("productName", productName);
