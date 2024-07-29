@@ -10,152 +10,152 @@ Swal.fire({
   },
 });
 
-// const products = [
-//   {
-//     name: "0.25 ltr Bottle",
-//     price: 6.5,
-//     image: "/product/25.png",
-//     intro: "Extra Virgin Olive Oil 0.25ltr Bottle 0.3 Acidity",
-//     category: "olive"
-//   },
-//   {
-//     name: "0.5 ltr Bottle",
-//     price: 12.75,
-//     image: "/product/5.png",
-//     intro: "Extra Virgin Olive Oil 0.5ltr Bottle 0.3 Acidity",
-//     category: "olive"
-//   },
-//   {
-//     name: "1 ltr Bottle",
-//     price: 25,
-//     image: "/product/1.avif",
-//     intro: "Extra Virgin Olive Oil 1ltr Bottle 0.3 Acidity",
-//     category: "olive"
-//   },
-//   {
-//     name: "2 ltr Bottle",
-//     price: 50,
-//     image: "/product/2.avif",
-//     intro: "Extra Virgin Olive Oil 2ltr Bottle 0.3 Acidity",
-//     category: "olive"
-//   },
-//   {
-//     name: "5 ltr Bottle",
-//     price: 125,
-//     image: "/product/5.avif",
-//     intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
-//     category: "olive"
-//   },
-//   {
-//     name: "10 ltr Bottle",
-//     price: 250,
-//     image: "/product/5.avif",
-//     intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
-//     category: "olive"
-//   },
-// ];
+const products = [
+  {
+    name: "0.25 ltr Bottle",
+    price: 6.5,
+    image: "/product/25.png",
+    intro: "Extra Virgin Olive Oil 0.25ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "0.5 ltr Bottle",
+    price: 12.75,
+    image: "/product/5.png",
+    intro: "Extra Virgin Olive Oil 0.5ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "1 ltr Bottle",
+    price: 25,
+    image: "/product/1.avif",
+    intro: "Extra Virgin Olive Oil 1ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "2 ltr Bottle",
+    price: 50,
+    image: "/product/2.avif",
+    intro: "Extra Virgin Olive Oil 2ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "5 ltr Bottle",
+    price: 125,
+    image: "/product/5.avif",
+    intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+  {
+    name: "10 ltr Bottle",
+    price: 250,
+    image: "/product/5.avif",
+    intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
+    category: "olive"
+  },
+];
 
-// const shoppingCart = [];
-// let cartButton = document.querySelector(".navbar-text.btn.btn-warning i");
+const shoppingCart = [];
+let cartButton = document.querySelector(".navbar-text.btn.btn-warning i");
 
-// window.onscroll = function () {
-//   scrollFunction();
-// };
+window.onscroll = function () {
+  scrollFunction();
+};
 
-// function scrollFunction() {
-//   if (
-//     document.body.scrollTop > 350 ||
-//     document.documentElement.scrollTop > 400
-//   ) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// }
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 350 ||
+    document.documentElement.scrollTop > 400
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
 
-// function SearchFunction() {
-//   var input, filter, div, products, h5, i, txtValue, noResults;
-//   input = document.getElementById("myInput");
-//   filter = input.value.toUpperCase();
-//   div = document.getElementById("product-list");
-//   products = div.getElementsByClassName("product");
-//   noResults = true;
+function SearchFunction() {
+  var input, filter, div, products, h5, i, txtValue, noResults;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("product-list");
+  products = div.getElementsByClassName("product");
+  noResults = true;
 
-//   for (i = 0; i < products.length; i++) {
-//       h5 = products[i].getElementsByTagName("h5")[0];
-//       txtValue = h5.textContent || h5.innerText;
-//       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//           products[i].style.display = "";
-//           noResults = false;
-//       } else {
-//           products[i].style.display = "none";
-//       }
-//   }
+  for (i = 0; i < products.length; i++) {
+      h5 = products[i].getElementsByTagName("h5")[0];
+      txtValue = h5.textContent || h5.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          products[i].style.display = "";
+          noResults = false;
+      } else {
+          products[i].style.display = "none";
+      }
+  }
 
-//   var noResultsMessage = document.getElementById("no-results-message");
-//   if (noResults) {
-//       if (!noResultsMessage) {
-//           noResultsMessage = document.createElement("h3");
-//           noResultsMessage.id = "no-results-message";
-//           noResultsMessage.innerHTML = `<div class="container mt-5"><center>No product with the name "${input.value}"</center></div>`;
-//           noResultsMessage.style.color = "red";
-//           div.appendChild(noResultsMessage);
-//       } else{
-//         noResultsMessage.remove();
-//       }
-//   } else{
-//       noResultsMessage.remove();
-//   }
-// }
+  var noResultsMessage = document.getElementById("no-results-message");
+  if (noResults) {
+      if (!noResultsMessage) {
+          noResultsMessage = document.createElement("h3");
+          noResultsMessage.id = "no-results-message";
+          noResultsMessage.innerHTML = `<div class="container mt-5"><center>No product with the name "${input.value}"</center></div>`;
+          noResultsMessage.style.color = "red";
+          div.appendChild(noResultsMessage);
+      } else{
+        noResultsMessage.remove();
+      }
+  } else{
+      noResultsMessage.remove();
+  }
+}
 
 
-// function filterByCategory() {
-//     const selectedCategories = Array.from(document.querySelectorAll('#category-filter input[type="checkbox"]:checked')).map(cb => cb.value.toUpperCase());
-//     const products = document.querySelectorAll("#product-list .product");
-//     products.forEach(product => {
-//         const category = product.querySelector("h6").innerText.toUpperCase();
-//         if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
-//             product.style.display = "";
-//         } else {
-//             product.style.display = "none";
-//         }
-//     });
-// }
+function filterByCategory() {
+    const selectedCategories = Array.from(document.querySelectorAll('#category-filter input[type="checkbox"]:checked')).map(cb => cb.value.toUpperCase());
+    const products = document.querySelectorAll("#product-list .product");
+    products.forEach(product => {
+        const category = product.querySelector("h6").innerText.toUpperCase();
+        if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
 
-// displayProducts();
+displayProducts();
 
-// function displayProducts() {
-//   const productListDiv = document.getElementById("product-list");
-//   productListDiv.innerHTML = "";
+function displayProducts() {
+  const productListDiv = document.getElementById("product-list");
+  productListDiv.innerHTML = "";
 
-//   products.forEach((product) => {
-//     const productCard = `
-//             <div class="col-lg-4 col-md-6 col-sm-6 mb-4 product" id="computer">
-//                 <div class="card bg-dark text-white">
-//                     <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
-//                     <div class="card-body ">
-//                         <h6 style="display:none">${product.category}</h6>
-//                         <h5 class="card-title">${product.name}</h5><hr>
-//                         <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
-//                         <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 product" id="phone">
-//                 <div class="card bg-dark text-white horizontal-card">
-//                     <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
-//                     <div class="card-body horizontal-card-body">
-//                         <h6 style="display:none">${product.category}</h6>
-//                         <h5 class="card-title">${product.name}</h5><hr>
-//                         <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
-//                         <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
-//                     </div>
-//                 </div>
-//             </div>
-//         `;
-//     productListDiv.innerHTML += productCard;
-//   });
-// }
+  products.forEach((product) => {
+    const productCard = `
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4 product" id="computer">
+                <div class="card bg-dark text-white">
+                    <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
+                    <div class="card-body ">
+                        <h6 style="display:none">${product.category}</h6>
+                        <h5 class="card-title">${product.name}</h5><hr>
+                        <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
+                        <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-4 product" id="phone">
+                <div class="card bg-dark text-white horizontal-card">
+                    <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
+                    <div class="card-body horizontal-card-body">
+                        <h6 style="display:none">${product.category}</h6>
+                        <h5 class="card-title">${product.name}</h5><hr>
+                        <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
+                        <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    productListDiv.innerHTML += productCard;
+  });
+}
 
 function description(intro, image, productName, price) {
   Swal.fire({
