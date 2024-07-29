@@ -437,7 +437,7 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
     },
   });
 
-  const scriptUrl ="https://script.google.com/macros/s/AKfycbxLD68AD0QD67p50-qFmmOVDtqWNyzzhzjbrylnS5lcMbtU4FSFejYwd_f4PgNuSZdo/exec";
+  const scriptUrl ="https://script.google.com/macros/s/AKfycbxE27Fvomy7fE0dkH_HiXzSaKptyDCg2yhlunblBcD3FkRjm2L_V8gosQ7HjB8rNoK5/exec";
 
   const formData = new FormData();
   formData.append("productName", productName);
