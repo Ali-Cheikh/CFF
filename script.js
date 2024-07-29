@@ -108,6 +108,7 @@ function SearchFunction() {
   }
 }
 
+
 function filterByCategory() {
     const selectedCategories = Array.from(document.querySelectorAll('#category-filter input[type="checkbox"]:checked')).map(cb => cb.value.toUpperCase());
     const products = document.querySelectorAll("#product-list .product");
@@ -129,31 +130,32 @@ function displayProducts() {
 
   products.forEach((product) => {
     const productCard = `
-      <div class="col-lg-4 col-md-6 col-sm-6 mb-4 product" id="computer">
-        <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
-          <img src="${product.image}" class="w-full h-48 object-cover rounded-lg mb-4" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
-          <h6 class="hidden">${product.category}</h6>
-          <h5 class="text-xl font-bold mb-2">${product.name}</h5>
-          <hr class="border-gray-600 mb-4">
-          <p class="mb-4">Price: ${product.price} <small><b>دت</b></small></p>
-          <button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 mb-4 product" id="phone">
-        <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
-          <img src="${product.image}" class="w-full h-48 object-cover rounded-lg mb-4" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
-          <h6 class="hidden">${product.category}</h6>
-          <h5 class="text-xl font-bold mb-2">${product.name}</h5>
-          <hr class="border-gray-600 mb-4">
-          <p class="mb-4">Price: ${product.price} <small><b>دت</b></small></p>
-          <button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
-        </div>
-      </div>
-    `;
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4 product" id="computer">
+                <div class="card bg-dark text-white">
+                    <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
+                    <div class="card-body ">
+                        <h6 style="display:none">${product.category}</h6>
+                        <h5 class="card-title">${product.name}</h5><hr>
+                        <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
+                        <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-4 product" id="phone">
+                <div class="card bg-dark text-white horizontal-card">
+                    <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
+                    <div class="card-body horizontal-card-body">
+                        <h6 style="display:none">${product.category}</h6>
+                        <h5 class="card-title">${product.name}</h5><hr>
+                        <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
+                        <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        `;
     productListDiv.innerHTML += productCard;
   });
 }
-
 
 function description(intro, image, productName, price) {
   Swal.fire({
@@ -426,6 +428,7 @@ function checkout() {
 function sendProductToGoogleSheets(productName, price, count, userData) {
   Swal.fire({
     title: "Sending...",
+    titleColor: "#fc1111",
     text: "Please wait while your purchase is being processed.",
     icon: "info",
     allowOutsideClick: false,
@@ -435,7 +438,7 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
     },
   });
 
-  const scriptUrl ="https://script.google.com/macros/s/AKfycbx_Ka4c9QmL6At--MPxK2XXpDQMoY2SHp67T8sWzi4Xkul_f0iDeiUvAcAEKDXU4DVr/exec";
+  const scriptUrl ="https://script.google.com/macros/s/AKfycbwiiGQqcP3hBQxZ23LPtTXC8d9Nj-Jtm_MSiHTdF4Oy2JvjD1nBtu1pBFDk1Ug5nQxS/exec";
 
   const formData = new FormData();
   formData.append("productName", productName);
