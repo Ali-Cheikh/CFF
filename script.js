@@ -63,7 +63,7 @@ const products = [
   {
     name: "كرموس مصبر",
     price: 15,
-    image: "/product/420g.jpg",
+    image: "/product/karmous.jpg",
     intro: "كرموس مصبر بزيت زيتون البكر",
     category: "karmous"
   },
