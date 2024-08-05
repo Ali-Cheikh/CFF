@@ -16,42 +16,63 @@ const products = [
     price: 6.5,
     image: "/product/25.png",
     intro: "Extra Virgin Olive Oil 0.25ltr Bottle 0.3 Acidity",
-    category: "olive"
+    category: "olive , zit , zaytoun"
   },
   {
     name: "0.5 ltr Bottle",
     price: 12.75,
     image: "/product/5.png",
     intro: "Extra Virgin Olive Oil 0.5ltr Bottle 0.3 Acidity",
-    category: "olive"
+    category: "olive , zit , zaytoun"
   },
   {
     name: "1 ltr Bottle",
     price: 25,
     image: "/product/1.avif",
     intro: "Extra Virgin Olive Oil 1ltr Bottle 0.3 Acidity",
-    category: "olive"
+    category: "olive , zit , zaytoun"
   },
   {
     name: "2 ltr Bottle",
     price: 50,
     image: "/product/2.avif",
     intro: "Extra Virgin Olive Oil 2ltr Bottle 0.3 Acidity",
-    category: "olive"
+    category: "olive , zit , zaytoun"
   },
   {
     name: "5 ltr Bottle",
     price: 125,
     image: "/product/5.avif",
     intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
-    category: "olive"
+    category: "olive , zit , zaytoun"
   },
   {
-    name: "10 ltr Bottle",
-    price: 250,
-    image: "/product/5.avif",
-    intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
-    category: "olive"
+    name: " زيتون مخلل",
+    price: 6.5,
+    image: "/product/570g.jpg",
+    intro: "570g زيتون مخلل",
+    category: "olive , zit , zaytoun"
+  },
+  {
+    name: " زيتون مخلل",
+    price: 5,
+    image: "/product/420g.jpg",
+    intro: "420g زيتون مخلل",
+    category: "olive , zit , zaytoun"
+  },
+  {
+    name: "كرموس مصبر",
+    price: 15,
+    image: "/product/420g.jpg",
+    intro: "كرموس مصبر بزيت الزيتون البكر",
+    category: "karmous"
+  },
+  {
+    name: "عسل جبلي / سدر",
+    price: 15,
+    image: "/product/3sal.jpg",
+    intro: "عسل جبلي / سدر",
+    category: "3asal"
   },
 ];
 
