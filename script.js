@@ -69,7 +69,7 @@ const products = [
   },
   {
     name: "عسل جبلي / سدر",
-    price: 15,
+    price: 30,
     image: "/product/3sal.jpg",
     intro: "عسل جبلي / سدر",
     category: "3asal"
