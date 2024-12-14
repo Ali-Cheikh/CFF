@@ -47,10 +47,10 @@ const products = [
     category: "olive , zit , zaytoun"
   },
   {
-    name: "عسل جبلي / سدر",
+    name: "عسل جبلي / سدر / كلتوس / خروب",
     price: 30,
     image: "/product/3sal.jpg",
-    intro: "عسل جبلي / سدر",
+    intro: "عسل جبلي / سدر / كلتوس / خروب",
     category: "3asal"
   },
 ];
