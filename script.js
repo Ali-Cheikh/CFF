@@ -13,59 +13,38 @@ Swal.fire({
 const products = [
   {
     name: "0.25 ltr Bottle",
-    price: 6.5,
+    price: 4.5,
     image: "/product/25.png",
     intro: "Extra Virgin Olive Oil 0.25ltr Bottle 0.3 Acidity",
     category: "olive , zit , zaytoun"
   },
   {
     name: "0.5 ltr Bottle",
-    price: 12.75,
+    price: 7.5,
     image: "/product/5.png",
     intro: "Extra Virgin Olive Oil 0.5ltr Bottle 0.3 Acidity",
     category: "olive , zit , zaytoun"
   },
   {
     name: "1 ltr Bottle",
-    price: 25,
+    price: 16,
     image: "/product/1.avif",
     intro: "Extra Virgin Olive Oil 1ltr Bottle 0.3 Acidity",
     category: "olive , zit , zaytoun"
   },
   {
     name: "2 ltr Bottle",
-    price: 50,
+    price: 30,
     image: "/product/2.avif",
     intro: "Extra Virgin Olive Oil 2ltr Bottle 0.3 Acidity",
     category: "olive , zit , zaytoun"
   },
   {
     name: "5 ltr Bottle",
-    price: 125,
+    price: 80,
     image: "/product/5.avif",
     intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
     category: "olive , zit , zaytoun"
-  },
-  {
-    name: " زيتون مخلل",
-    price: 6.5,
-    image: "/product/570g.jpg",
-    intro: "570g زيتون مخلل",
-    category: "olive , zit , zaytoun"
-  },
-  {
-    name: " زيتون مخلل",
-    price: 5,
-    image: "/product/420g.jpg",
-    intro: "420g زيتون مخلل",
-    category: "olive , zit , zaytoun"
-  },
-  {
-    name: "كرموس مصبر",
-    price: 15,
-    image: "/product/karmous.jpg",
-    intro: "كرموس مصبر بزيت زيتون البكر",
-    category: "karmous"
   },
   {
     name: "عسل جبلي / سدر",
