@@ -446,9 +446,6 @@ function checkout() {
         shoppingCart.length = 0;
         cartButton.classList.remove("fa-cart-plus");
         cartButton.classList.add("fa-shopping-cart");
-        const newUrl = "/checkout"; // Change this to the desired URL
-        const newState = { page: "checkout" }; // Change this to any state you want to associate
-        history.pushState(newState, "", newUrl);
       }
     });
   });
@@ -486,7 +483,7 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
       Swal.fire({
         title: "Demand Reached",
         text: "Your purchase was successful. We'll contact you soon.",
-        imageUrl: "/img/sc.png",
+        imageUrl: "https://cffstore.vercel.app/img/logo-remove.png",
         imageAlt: "Custom Success Icon",
         showConfirmButton: false,
         timer: 2500,
