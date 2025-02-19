@@ -1,6 +1,12 @@
 .h2{
     overflow: hidden;
 }
+/*Background color is gradient of nature colors*/
+body{
+    background: linear-gradient(189deg, rgba(0, 255, 0, 0.151), rgba(0, 0, 255, 0.164), rgb(255, 255, 255));
+    background-size: 400% 400%;
+    background-size: cover;
+}
 @import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
 .sniglet-regular {
     font-family: "Sniglet", system-ui;
@@ -43,6 +49,50 @@ hr {
 .card-text {
     margin-bottom: 0.5rem;
 }
+.product-card {
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.close-button {
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
+
+.category-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
 @media screen and (max-width: 600px) {
     #computer{
         display: none;
@@ -59,6 +109,11 @@ hr {
     }
     .foot-logo{
         width: 100%;
+        padding-right: 2px;
+    }
+    .foot{
+        border-left: solid 1px green;
+        padding-left: 2px;
     }
     .welcome{
         font-size: 150%;
@@ -89,6 +144,9 @@ hr {
         display: none;
     }
 
+}
+i{
+    padding-left: 4px;
 }
 label{
     display: inline-block;

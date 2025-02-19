@@ -3,8 +3,8 @@ Swal.fire({
   allowOutsideClick: false,
   showConfirmButton: false,
   timer: 100,
-  backdrop:'white',
-  width:'100%',
+  backdrop: "white",
+  width: "100%",
   willOpen: () => {
     Swal.showLoading();
   },
@@ -16,42 +16,42 @@ const products = [
     price: 4.5,
     image: "/product/25.png",
     intro: "Extra Virgin Olive Oil 0.25ltr Bottle 0.3 Acidity",
-    category: "olive , zit , zaytoun"
+    category: "olive , zit , zaytoun",
   },
   {
     name: "0.5 ltr Bottle",
     price: 7.5,
     image: "/product/5.png",
     intro: "Extra Virgin Olive Oil 0.5ltr Bottle 0.3 Acidity",
-    category: "olive , zit , zaytoun"
+    category: "olive , zit , zaytoun",
   },
   {
     name: "1 ltr Bottle",
     price: 16,
     image: "/product/1.avif",
     intro: "Extra Virgin Olive Oil 1ltr Bottle 0.3 Acidity",
-    category: "olive , zit , zaytoun"
+    category: "olive , zit , zaytoun",
   },
   {
     name: "2 ltr Bottle",
     price: 30,
     image: "/product/2.avif",
     intro: "Extra Virgin Olive Oil 2ltr Bottle 0.3 Acidity",
-    category: "olive , zit , zaytoun"
+    category: "olive , zit , zaytoun",
   },
   {
     name: "5 ltr Bottle",
     price: 80,
     image: "/product/5.avif",
     intro: "Extra Virgin Olive Oil 5ltr Bottle 0.3 Acidity",
-    category: "olive , zit , zaytoun"
+    category: "olive , zit , zaytoun",
   },
   {
     name: "عسل جبلي / سدر / كلتوس / خروب",
     price: 30,
     image: "/product/3sal.jpg",
     intro: "عسل جبلي / سدر / كلتوس / خروب",
-    category: "3asal"
+    category: "3asal",
   },
 ];
 
@@ -74,103 +74,124 @@ function scrollFunction() {
 }
 
 function SearchFunction() {
-  var input, filter, div, products, h5, i, txtValue, noResults;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("product-list");
-  products = div.getElementsByClassName("product");
-  noResults = true;
+  const input = document.getElementById("myInput");
+  const filter = input.value.toLowerCase();
+  const productList = document.getElementById("product-list");
+  const products = productList.getElementsByClassName("product");
+  let noResults = true;
 
-  for (i = 0; i < products.length; i++) {
-      h5 = products[i].getElementsByTagName("h5")[0];
-      txtValue = h5.textContent || h5.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          products[i].style.display = "";
-          noResults = false;
-      } else {
-          products[i].style.display = "none";
-      }
-  }
+  // Clear previous no results message
+  const existingMessage = document.getElementById("no-results-message");
+  if (existingMessage) existingMessage.remove();
 
-  var noResultsMessage = document.getElementById("no-results-message");
-  if (noResults) {
-      if (!noResultsMessage) {
-          noResultsMessage = document.createElement("h3");
-          noResultsMessage.id = "no-results-message";
-          noResultsMessage.innerHTML = `<div class="container mt-5"><center>No product with the name "${input.value}"</center></div>`;
-          noResultsMessage.style.color = "red";
-          div.appendChild(noResultsMessage);
-      } else{
-        noResultsMessage.remove();
-      }
-  } else{
-      noResultsMessage.remove();
+  Array.from(products).forEach((product) => {
+    const title = product.querySelector("h5").textContent.toLowerCase();
+    const category = product.querySelector("h6").textContent.toLowerCase();
+
+    if (title.includes(filter) || category.includes(filter)) {
+      product.style.display = "";
+      noResults = false;
+    } else {
+      product.style.display = "none";
+    }
+  });
+
+  if (noResults && filter) {
+    const noResultsMessage = document.createElement("h3");
+    noResultsMessage.id = "no-results-message";
+    noResultsMessage.innerHTML = `
+          <div class="container mt-5">
+              <center>No products found matching "${input.value}"</center>
+          </div>`;
+    noResultsMessage.style.color = "red";
+    productList.appendChild(noResultsMessage);
   }
 }
 
-
 function filterByCategory() {
-    const selectedCategories = Array.from(document.querySelectorAll('#category-filter input[type="checkbox"]:checked')).map(cb => cb.value.toUpperCase());
-    const products = document.querySelectorAll("#product-list .product");
-    products.forEach(product => {
-        const category = product.querySelector("h6").innerText.toUpperCase();
-        if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
-            product.style.display = "";
-        } else {
-            product.style.display = "none";
-        }
-    });
+  const selectedCategories = Array.from(
+    document.querySelectorAll('#category-filter input[type="checkbox"]:checked')
+  ).map((cb) => cb.value.toUpperCase());
+  const products = document.querySelectorAll("#product-list .product");
+  products.forEach((product) => {
+    const category = product.querySelector("h6").innerText.toUpperCase();
+    if (
+      selectedCategories.length === 0 ||
+      selectedCategories.includes(category)
+    ) {
+      product.style.display = "";
+    } else {
+      product.style.display = "none";
+    }
+  });
 }
 
 displayProducts();
-
 function displayProducts() {
   const productListDiv = document.getElementById("product-list");
   productListDiv.innerHTML = "";
 
   products.forEach((product) => {
     const productCard = `
-            <div class="col-lg-4 col-md-6 col-sm-6 mb-4 product" id="computer">
-                <div class="card bg-dark text-white">
-                    <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
-                    <div class="card-body ">
-                        <h6 style="display:none">${product.category}</h6>
-                        <h5 class="card-title">${product.name}</h5><hr>
-                        <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
-                        <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-4 product" id="phone">
-                <div class="card bg-dark text-white horizontal-card">
-                    <img src="${product.image}" class="card-img-top" alt="product img" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
-                    <div class="card-body horizontal-card-body">
-                        <h6 style="display:none">${product.category}</h6>
-                        <h5 class="card-title">${product.name}</h5><hr>
-                        <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
-                        <button class="btn btn-primary float-right" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    productListDiv.innerHTML += productCard;
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-4 product fade-in" data-category="${product.category}">
+              <div class="card bg-dark text-white product-card">
+                  <div class="image-container">
+                      <img src="${product.image}" class="card-img-top lazy-load" alt="${product.name}" loading="lazy" onclick="description('${product.intro}', '${product.image}', '${product.name}', '${product.price}')">
+                  </div>
+                  <div class="card-body">
+                      <h6 class="category-tag">${product.category}</h6>
+                      <h5 class="card-title">${product.name}</h5>
+                      <hr class="divider">
+                      <div class="price-section">
+                          <p class="card-text">Price: ${product.price} <small><b>دت</b></small></p>
+                          <button class="btn btn-primary add-to-cart-btn" onclick="confirmAddToCart('${product.name}', ${product.price}, '${product.intro}', '${product.image}')">
+                              <i class="fas fa-cart-plus"></i> Add to Cart
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      `;
+    productListDiv.insertAdjacentHTML("beforeend", productCard);
   });
+
+  // Initialize lazy loading
+  initializeLazyLoading();
 }
+
+// Add this new function for lazy loading
+function initializeLazyLoading() {
+  const lazyImages = document.querySelectorAll(".lazy-load");
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.classList.add("loaded");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  lazyImages.forEach((img) => imageObserver.observe(img));
+}
+
+document.head.appendChild(style);
 
 function description(intro, image, productName, price) {
   Swal.fire({
-    title:`<h2> ${productName}</h2>`,
+    title: `<h2> ${productName}</h2>`,
     html: `
         <div style="display: flex; align-items: center;">
             <div style="flex: 1; padding-right: 20px;">
                 <img src="${image}" style="width: 100%; height: 100%; object">
             </div>
             <div style="flex: 1; border-left:dashed">
-                <p>${intro}</p> <br><small><b>دت</b></small> ${price}
+                <p>${intro}</p> <br> <span style='border: solid 0.5px blue;border-radius:25%;padding:2px;color:blue;background-color:cyan'><small><b>دت</b></small>${price}</span>
             </div>
         </div>
             `,
-    backdrop:'#f333333',
+    backdrop: "#f333333",
     showConfirmButton: false,
     background: "#f4f4f4",
   });
@@ -222,7 +243,7 @@ function addToCart(productName, price, quantity) {
 }
 
 function openCart() {
-  let cartContent = "<h6>Shopped Items</h6>";
+  let cartContent = "";
   if (shoppingCart.length === 0) {
     cartContent += "<p>Your cart is empty.</p>";
     // Change the cart button icon back to the regular icon
@@ -234,8 +255,8 @@ function openCart() {
                 <div>
                     <p style="display:inline-block">
                     <button class="btn btn-danger" onclick="removeFromCart('${item.productName}')"><i class="fa-close"></i></button>
-                    <big><u>${item.productName}</u> :</big> ${item.price} <small><b>دت</b></small> =>
-                        <input type="number" min="1" value="${item.count}" onchange="updateCount('${item.productName}', this.value)" style="width:40px" controls="true">
+                    <big><u>${item.productName}</u> :</big> ${item.price} <small><b>دت</b></small> <span style='border: solid 0.5px blue;border-radius:25%;padding:2px;color:blue;background-color:cyan'> =>
+                        <input type="number" min="1" value="${item.count}" onchange="updateCount('${item.productName}', this.value)" style="width:40px" controls="true"></span>
                     </p>
                 </div>
             `;
@@ -247,10 +268,13 @@ function openCart() {
         `;
   }
   Swal.fire({
-    title: "Your shopping cart",
+    title: "Your Cart",
     html: cartContent,
-    confirmButtonText: "Continue Shopping",
+    confirmButtonText: "✕",
     confirmButtonColor: "#fc5d",
+    customClass: {
+      confirmButton: "close-button",
+    },
   });
 }
 
@@ -355,7 +379,9 @@ function promptUserData(callback) {
               const selectedCity = document.getElementById("city-select").value;
               const location = document.getElementById("location-input").value;
               if (!selectedCity || !location) {
-                Swal.showValidationMessage("Please select a city and enter your location");
+                Swal.showValidationMessage(
+                  "Please select a city and enter your location"
+                );
               }
               return { selectedCity, location };
             },
@@ -387,7 +413,10 @@ function checkout() {
   }
 
   // Calculate total price
-  const totalPrice = shoppingCart.reduce((total, item) => total + item.price * item.count, 0);
+  const totalPrice = shoppingCart.reduce(
+    (total, item) => total + item.price * item.count,
+    0
+  );
 
   // Prompt for user data
   promptUserData((userData) => {
@@ -399,7 +428,7 @@ function checkout() {
       icon: "info",
       showCancelButton: true,
       confirmButtonText: "Confirm",
-      confirmButtonColor:"green",
+      confirmButtonColor: "green",
       cancelButtonText: "Cancel",
       cancelButtonColor: "#6c757d",
     }).then((result) => {
@@ -417,9 +446,9 @@ function checkout() {
         shoppingCart.length = 0;
         cartButton.classList.remove("fa-cart-plus");
         cartButton.classList.add("fa-shopping-cart");
-        const newUrl = '/checkout'; // Change this to the desired URL
-        const newState = { page: 'checkout' }; // Change this to any state you want to associate
-        history.pushState(newState, '', newUrl);
+        const newUrl = "/checkout"; // Change this to the desired URL
+        const newState = { page: "checkout" }; // Change this to any state you want to associate
+        history.pushState(newState, "", newUrl);
       }
     });
   });
@@ -438,7 +467,8 @@ function sendProductToGoogleSheets(productName, price, count, userData) {
     },
   });
 
-  const scriptUrl ="https://script.google.com/macros/s/AKfycbwOsygqnhZ6SVFUAN-cQIqC5C6pYSSZnmQLMd3OPTBoo2tZmLANWJ5bnCoUsfIsKRY2/exec";
+  const scriptUrl =
+    "https://script.google.com/macros/s/AKfycbzCUNhrWCZB9rGyO4VedSkorhSgCPCkqXeGYrqumu2rDunP5m6G4jgY--h-Mu6jXNwX/exec";
 
   const formData = new FormData();
   formData.append("productName", productName);
