@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "0.25L Bottle",
+        "price": 4.5,
+        "image": "/product/25.png",
+        "description": "Extra Virgin Olive Oil 0.25L Bottle with 0.3 Acidity. Cold pressed from our finest olives.",
+        "category": ["olive", "zit", "zaytoun"],
+        "featured": false
+    },
+    {
+        "id": 2,
+        "name": "0.5L Bottle",
+        "price": 7.5,
+        "image": "/product/5.png",
+        "description": "Extra Virgin Olive Oil 0.5L Bottle with 0.3 Acidity. Perfect for everyday cooking.",
+        "category": ["olive", "zit", "zaytoun"],
+        "featured": false
+    },
+    {
+        "id": 3,
+        "name": "1L Bottle",
+        "price": 16,
+        "image": "/product/1.avif",
+        "description": "Extra Virgin Olive Oil 1L Bottle with 0.3 Acidity. Our best-selling size for families.",
+        "category": ["olive", "zit", "zaytoun"],
+        "featured": true
+    },
+    {
+        "id": 4,
+        "name": "2L Bottle",
+        "price": 30,
+        "image": "/product/2.avif",
+        "description": "Extra Virgin Olive Oil 2L Bottle with 0.3 Acidity. Great value for regular users.",
+        "category": ["olive", "zit", "zaytoun"],
+        "featured": false
+    },
+    {
+        "id": 5,
+        "name": "5L Bottle",
+        "price": 80,
+        "image": "/product/5.avif",
+        "description": "Extra Virgin Olive Oil 5L Bottle with 0.3 Acidity. For restaurants and large families.",
+        "category": ["olive", "zit", "zaytoun"],
+        "featured": false
+    },
+    {
+        "id": 6,
+        "name": "Mountain Honey",
+        "price": 30,
+        "image": "/product/3sal.jpg",
+        "description": "Pure natural honey - Mountain, Sidr, Kltos, and Carob varieties available. Rich in antioxidants.",
+        "category": ["honey", "3asal", "natural"],
+        "featured": true
+    }
+]
