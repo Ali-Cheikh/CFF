@@ -1,73 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Primary Meta Tags -->
-    <link rel="shortcut icon" href="https://cffstore.vercel.app/img/logo.png" type="image/x-icon">
-    <title>C F F | Cheikh Family Farm</title>
-    <meta name="title" content="C F F | Cheikh Family Farm" />
-    <meta name="description" content="C F F | Cheikh Family Farm Store " />
+    <title>CFF | Cheikh Family Farm - Premium Olive Oil & Honey</title>
+    <meta name="description" content="Discover premium Tunisian olive oil and natural honey from Cheikh Family Farm. Authentic, high-quality products directly from our family to yours.">
+    
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ali-cheikh.github.io/" />
-    <meta property="og:title" content="C F F | Cheikh Family Farm" />
-    <meta property="og:description" content="Tichri mil site ili tawsil 3lina" />
-    <meta property="og:image" content="https://cffstore.vercel.app/img/logo.png" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ali-cheikh.github.io/">
+    <meta property="og:title" content="CFF | Cheikh Family Farm - Premium Olive Oil & Honey">
+    <meta property="og:description" content="Discover premium Tunisian olive oil and natural honey from Cheikh Family Farm.">
+    <meta property="og:image" content="https://cffstore.vercel.app/img/logo.png">
+    
     <!-- Twitter -->
-    <meta property="twitter:card" content="image-card" />
-    <meta property="twitter:url" content="https://eshop.ali-cheikh.com/" />
-    <meta property="twitter:title" content="C F F | Cheikh Family Farm" />
-    <meta property="twitter:description" content="C F F | Cheikh Family store" />
-    <meta property="twitter:image" content="https://cffstore.vercel.app/img/logo.png" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://eshop.ali-cheikh.com/">
+    <meta property="twitter:title" content="CFF | Cheikh Family Farm - Premium Olive Oil & Honey">
+    <meta property="twitter:description" content="Discover premium Tunisian olive oil and natural honey from Cheikh Family Farm.">
+    <meta property="twitter:image" content="https://cffstore.vercel.app/img/logo.png">
+    
+    <link rel="shortcut icon" href="https://cffstore.vercel.app/img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sniglet: ['"Sniglet"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container mt-5">
-        <center>
-            <button style="right:6%;top: 4%;z-index: +9999;position: fixed;display: none;" class="navbar-text btn btn-warning mt-2" onclick="openCart()" id="mybutton"><i class="fa fa-shopping-cart"></i></button>
-            <h2 style="float:left" class="navbar-text"> Cheikh Family Farm <i class="fa fa-leaf"></i></h2>
-            <br>
-        </center>
-    </div>
-    <div class="container mt-5">
-        <img src="img/image.jpg" width="100%" alt="">
-        <div class="container">
-            <hr><br>
-            <input class="form-control mr-sm-2" type="search" id="myInput" onkeyup="SearchFunction()" placeholder="Search For Products" title="Type in a name"><br>
-            <div id="product-list" class="row mt-6"></div>
-            <br>
+<body class="bg-gradient-to-br from-green-50 via-blue-50 to-white min-h-screen font-sniglet">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
+        <div class="animate-float">
+            <img src="img/logo-remove.png" alt="CFF Logo" class="w-32 h-32 mb-4">
         </div>
-        <hr>
+        <h1 class="text-3xl font-extrabold text-green-600 animate-pulse">Loading...</h1>
     </div>
-        <div class="container mt-5">
-            <div style="display: flex; align-items: center;">
-                <div style="flex: 1;" >
-                    <img src="img/logo-remove.png" class="foot-logo" alt="Logo">
-                </div>
-                <div class="foot" style="flex: 1;">
-                    <h3><i class="fas fa-phone"></i> : Youssef <a href="tel:+21658000171">  +216 58 000 171</a></h3><br>
-                    <h3><i class="fas fa-hands-helping"></i> : <a href="https://www.linkedin.com/in/hanen-benchikha-cheikh-6757b218a">Hanen</a>   <a href="tel:+21697965725">+216 97 965 725</a></h3><br>
-                    <h3><i class="fab fa-facebook"></i> : <a href="https://www.facebook.com/people/Cheikh-Family-Farm/100063483428963/">Cheikh Family Farm </a></h3><br>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="img/logo-remove.png" alt="Logo" class="h-10 w-10">
+                <h1 class="text-xl md:text-2xl font-extrabold text-green-800">Cheikh Family Farm <i class="fas fa-leaf text-green-600"></i></h1>
+            </div>
+            <button id="cart-button" onclick="openCart()" class="relative p-3 rounded-full bg-amber-400 hover:bg-amber-500 transition-colors shadow-md">
+                <i class="fas fa-shopping-cart text-white"></i>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="mb-12 rounded-xl overflow-hidden shadow-lg">
+            <img src="img/image.jpg" alt="Cheikh Family Farm Products" class="w-full h-64 md:h-96 object-cover">
+            <div class="bg-white p-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-4">Premium Tunisian Olive Oil & Natural Honey</h2>
+                <p class="text-gray-700 mb-6">Authentic, high-quality products directly from our family farm to your home.</p>
+                
+                <div class="relative">
+                    <input type="search" id="search-input" placeholder="Search for products..." 
+                           class="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                 </div>
             </div>
-            <br>
-            <center>
-                <h3 class="text"><i class="fas fa-envelope-open-text"></i> : <a href="mailto:Cheikh.Family.Farm@gmail.com" style="color: red;">Cheikh.Family.Farm@gmail.com</a></h3><br>
-            </center>
-            </div><br>
-        <footer class="footer bg-warning">
-            <div class=" fixed-bottom">
-                <center><span class="text-muted">© 2025 <big>Cheikh Family Farm</big> . All rights reserved.</span></center>
+        </section>
+
+        <!-- Products Section -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="border-b-4 border-green-500 pb-2">Our Products</span>
+            </h2>
+            
+            <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            
+            <div id="no-results" class="hidden text-center py-12">
+                <i class="fas fa-search text-4xl text-gray-300 mb-4"></i>
+                <h3 class="text-xl font-bold text-gray-600">No products found</h3>
+                <p class="text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
             </div>
-        </footer>
-        <script src="script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/3">
+                    <img src="img/logo-remove.png" alt="CFF Logo" class="h-20 mb-4">
+                    <p class="mb-4">Family-owned farm producing premium olive oil and natural honey in Tunisia.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/people/Cheikh-Family-Farm/100063483428963/" class="text-white hover:text-amber-300 transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 border-b-2 border-amber-400 pb-2 inline-block">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-amber-400"></i>
+                            <div>
+                                <span class="font-semibold">Youssef:</span>
+                                <a href="tel:+21658000171" class="hover:text-amber-300 transition-colors"> +216 58 000 171</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hands-helping mt-1 mr-3 text-amber-400"></i>
+                            <div>
+                                <span class="font-semibold">Hanen:</span>
+                                <a href="tel:+21697965725" class="hover:text-amber-300 transition-colors"> +216 97 965 725</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-amber-400"></i>
+                            <a href="mailto:Cheikh.Family.Farm@gmail.com" class="hover:text-amber-300 transition-colors">Cheikh.Family.Farm@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 border-b-2 border-amber-400 pb-2 inline-block">Location</h3>
+                    <p class="mb-4">Our farm is located in the heart of Tunisia, where we carefully cultivate our olive trees and beehives.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Cheikh Family Farm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,176 +1,70 @@
-.h2{
-    overflow: hidden;
-}
-/*Background color is gradient of nature colors*/
-body{
-    background: linear-gradient(189deg, rgba(0, 255, 0, 0.151), rgba(0, 0, 255, 0.164), rgb(255, 255, 255));
-    background-size: 400% 400%;
-    background-size: cover;
-}
 @import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
-.sniglet-regular {
-    font-family: "Sniglet", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
 
-  .sniglet-extrabold {
-    font-family: "Sniglet", system-ui;
-    font-weight: 800;
-    font-style: normal;
-  }
-  
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 5px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
-.horizontal-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+::-webkit-scrollbar-thumb {
+    background: #4ade80;
+    border-radius: 4px;
 }
-.horizontal-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin: 8px;
+
+::-webkit-scrollbar-thumb:hover {
+    background: #22c55e;
 }
-.horizontal-card-body {
-    flex: 1;
-}
-.card-title {
-    margin-bottom: 0.5rem;
-}
-.card-text {
-    margin-bottom: 0.5rem;
-}
+
+/* Product card hover effect */
 .product-card {
-    transition: transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-
-.product-card:hover .product-overlay {
-    opacity: 1;
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.close-button {
-    border-radius: 50% !important;
-    width: 40px !important;
-    height: 40px !important;
-    padding: 0 !important;
-    font-size: 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+/* Pulse animation for featured items */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-} 
-
-.category-tag {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-}
-@media screen and (max-width: 600px) {
-    #computer{
-        display: none;
-    }
-    label{
-        display: inline-block;
-        border-left: solid;
-        padding-left: 2px;
-        width: 200px;
-        border-right: solid;
-    }
-    .foot h3{
-        font-size: larger;
-    }
-    .foot-logo{
-        width: 100%;
-        padding-right: 2px;
-    }
-    .foot{
-        border-left: solid 1px green;
-        padding-left: 2px;
-    }
-    .welcome{
-        font-size: 150%;
-        font-weight: bold;
-    }
-    .text{
-        font-size: 18px !important;
-    }
-}
-@media screen and (min-width: 600px) {
-    #phone{
-        display: none;
-    }
-    .foot-logo{
-        width: 50%;
-    }
-    .welcome{
-        font-size: 300%;
-        font-weight: bold;
-    }
-
-}
-@media screen and (max-width: 370px) {
-    #computer{
-        display: block;
-    }
-    #phone{
-        display: none;
-    }
-
-}
-i{
-    padding-left: 4px;
-}
-label{
-    display: inline-block;
-    cursor: pointer;
-    border-left: solid;
-    padding-left: 2px;
-    width: 200px;
-    user-select: none;
-}
-#product-list,h2{
-    font-family: "sniglet", system-ui;
-    font-style: bold;
-}
-.sss{
-    width: 10%;
-    background-repeat: repeat-x;
-    rotate: 90deg;
-}
-.card-img-top{
-    overflow:hidden;
-    max-height: 300px;
+.featured {
+    animation: pulse 2s infinite;
 }
 
-a:link{
-    color: #000;
+/* Loading spinner */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #22c55e;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Custom Swal2 styling */
+.swal2-popup {
+    font-family: "Sniglet", system-ui, sans-serif !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+}
