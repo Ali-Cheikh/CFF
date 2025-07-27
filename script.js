@@ -494,7 +494,7 @@ function sendOrderToServer(order) {
     });
 
     const scriptUrl =
-        "https://script.google.com/macros/s/AKfycbzbg6CWNSBUgiSHrBCVedPVJUFYFhR8d3ZgJwbKh17ONJl72xzQCtKaamaKS1_f0oLI/exec";
+        "https://script.google.com/macros/s/AKfycbwrTBVKzTTii1kyEu8x0BkQwo6lUpimSrcA3ykqLylJg5g2loEa6SV0Yp2Z0ZQk1sdE/exec";
 
     const formData = new FormData();
     formData.append("productName", order.items.map(item => `${item.name} (${item.quantity})`).join(", "));
