@@ -497,7 +497,7 @@ function sendOrderToServer(order) {
         "https://script.google.com/macros/s/AKfycbwrTBVKzTTii1kyEu8x0BkQwo6lUpimSrcA3ykqLylJg5g2loEa6SV0Yp2Z0ZQk1sdE/exec";
 
     const formData = new FormData();
-    formData.append("productName", order.items.map(item => `${item.name} (${item.quantity})`).join(", "));
+    formData.append("productName", order.items.map(item => `${item.name} (${item.quantity})`).join(",\n "));
     formData.append("price", order.total);
     formData.append("count", order.items.reduce((total, item) => total + item.quantity, 0));
     formData.append("phone", order.customer.phone);
